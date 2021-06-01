@@ -1,6 +1,6 @@
-import {Component} from '@angular/core';
-import {Input} from '@angular/core';
-import {Post} from '../../models/Post';
+import {Component, Input} from '@angular/core';
+
+import {Post} from '../../models';
 
 @Component({
   selector: 'app-post',

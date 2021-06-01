@@ -1,7 +1,7 @@
 import {HttpClient} from '@angular/common/http';
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
-import {Post} from '../models/Post';
+import {Post} from '../models';
 
 @Injectable({
   providedIn: 'root'
@@ -9,10 +9,9 @@ import {Post} from '../models/Post';
 export class PostService {
   private url = 'https://jsonplaceholder.typicode.com/posts';
 
-  constructor(private httpClient: HttpClient) {
-  }
+  constructor(private httpClient: HttpClient) { }
 
-  getPosts(): Observable<Post[]> {
-    return this.httpClient.get<Post[]>(this.url)
+  getPosts(): Observable<Post []> {
+    return this.httpClient.get<Post []>(this.url)
   }
 }
