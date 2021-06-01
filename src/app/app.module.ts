@@ -1,12 +1,9 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-
-import { AppComponent } from './app.component';
-import { PostsComponent } from './posts/posts.component';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
 import {HttpClientModule} from "@angular/common/http";
-import { PostComponent } from './post/post.component';
-import { CommentsComponent } from './comments/comments.component';
-import { CommentComponent } from './comment/comment.component';
+
+import {AppComponent} from './app.component';
+import {CommentComponent, CommentsComponent, PostComponent, PostsComponent} from './components';
 
 @NgModule({
   declarations: [
