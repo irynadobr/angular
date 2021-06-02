@@ -9,7 +9,8 @@ import {Comment} from '../models';
 export class CommentService {
   private url = 'https://jsonplaceholder.typicode.com/comments';
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {
+  }
 
   getCommentsPost(id: number): Observable<Comment[]> {
     return this.httpClient.get<Comment[]>(`https://jsonplaceholder.typicode.com/comments?postId=${id}`);

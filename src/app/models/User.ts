@@ -1,4 +1,4 @@
- export interface User {
-  id:Number;
-  name:string
- }
+export interface User {
+  id: Number;
+  name: string
+}
