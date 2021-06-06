@@ -9,14 +9,14 @@ import {Comment} from 'src/app/models/Comment';
 })
 export class CommentsComponent implements OnInit {
   @Input()
-  id: number
+
   comments: Comment[];
 
   constructor(private commentService: CommentService) {
   }
 
   ngOnInit(): void {
-    this.commentService.getComentsPost(this.id).subscribe(value => this.comments = value)
+    this.commentService.getComment().subscribe(value => this.comments = value)
   }
 
 }

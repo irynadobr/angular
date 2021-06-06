@@ -9,13 +9,13 @@ import {PostService} from 'src/app/services';
 })
 export class PostsComponent implements OnInit {
   @Input()
-  id: number;
+
   posts: Post [];
 
   constructor(private postService: PostService) {
   }
 
   ngOnInit(): void {
-    this.postService.getPostsUser(this.id).subscribe(value => this.posts = value);
+    this.postService.getPosts().subscribe(value => this.posts = value);
   }
 }

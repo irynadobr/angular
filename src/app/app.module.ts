@@ -10,8 +10,20 @@ import {
   UserComponent,
   UsersComponent
 } from './components';
+import { RouterModule, Routes } from '@angular/router';
+import { UserDetailsComponent } from './user-details/user-details.component';
+import { PostDetailsComponent } from './post-details/post-details.component';
+import { CommentDetailsComponent } from './comment-details/comment-details.component';
 
-
+let routes:Routes =[{path:'users', component:UsersComponent,
+  children:[
+    {path:':id', component:UserDetailsComponent}
+  ]
+},
+  {path: 'posts', component: PostsComponent},
+  {path: 'posts/:id', component: PostDetailsComponent},
+  {path: 'comments', component: CommentsComponent},
+  {path: 'comments/:id', component: CommentDetailsComponent}]
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,11 +32,15 @@ import {
     PostComponent,
     PostsComponent,
     CommentComponent,
-    CommentsComponent
+    CommentsComponent,
+    UserDetailsComponent,
+    PostDetailsComponent,
+    CommentDetailsComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]

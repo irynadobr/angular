@@ -1,1 +1,11 @@
-<app-users></app-users>
+<!--<div>-->
+<!--  <button [routerLink] ="['users']">users</button> <button [routerLink] ="['posts']">posts</button>-->
+<!--</div>-->
+
+<ul>
+  <li><a [routerLink]="['users']">users</a></li>
+
+<li><a [routerLink] ="['posts']">posts</a></li>
+<li><a [routerLink] ="['comments']">comments></a></li>
+</ul>
+<router-outlet></router-outlet>
