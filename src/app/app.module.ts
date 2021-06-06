@@ -46,4 +46,3 @@ let routes:Routes =[{path:'users', component:UsersComponent,
   bootstrap: [AppComponent]
 })
 export class AppModule {
-}
