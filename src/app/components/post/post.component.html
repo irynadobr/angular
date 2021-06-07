@@ -1,3 +1,5 @@
-<p>"id": {{post.id}} <br> "title": {{post.title}} <br> </p>
-<a [routerLink] = "[post.id]">post details</a>
+<div>"id": {{post.id}} <br> "title": {{post.title}}
+  <button (click)="goToDetails()">details</button>
+</div>
+
 

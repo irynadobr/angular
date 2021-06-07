@@ -4,26 +4,28 @@ import {HttpClientModule} from "@angular/common/http";
 import {AppComponent} from './app.component';
 import {
   CommentComponent,
+  CommentDetailsComponent,
   CommentsComponent,
   PostComponent,
+  PostDetailsComponent,
   PostsComponent,
   UserComponent,
+  UserDetailsComponent,
   UsersComponent
 } from './components';
-import { RouterModule, Routes } from '@angular/router';
-import { UserDetailsComponent } from './user-details/user-details.component';
-import { PostDetailsComponent } from './post-details/post-details.component';
-import { CommentDetailsComponent } from './comment-details/comment-details.component';
+import {RouterModule, Routes} from '@angular/router';
 
-let routes:Routes =[{path:'users', component:UsersComponent,
-  children:[
-    {path:':id', component:UserDetailsComponent}
-  ]
+import {CommentsResolveService, PostsResolveService, UsersResolveService} from './services';
+
+
+let routes: Routes = [{path: 'users', component: UsersComponent, resolve: {xxx: UsersResolveService},children:[
+  {path: ':id', component: UserDetailsComponent}]
 },
-  {path: 'posts', component: PostsComponent},
+  {path: 'posts', component: PostsComponent, resolve: {xxx: PostsResolveService}},
   {path: 'posts/:id', component: PostDetailsComponent},
-  {path: 'comments', component: CommentsComponent},
-  {path: 'comments/:id', component: CommentDetailsComponent}]
+  {path: 'comments', component: CommentsComponent, resolve: {xxx: CommentsResolveService}},
+  {path: 'comments/:id', component: CommentsComponent}]
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,3 +48,4 @@ let routes:Routes =[{path:'users', component:UsersComponent,
   bootstrap: [AppComponent]
 })
 export class AppModule {
+}

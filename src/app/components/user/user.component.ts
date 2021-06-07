@@ -1,7 +1,7 @@
-import { state } from '@angular/animations';
+import {state} from '@angular/animations';
 import {Component, Input, OnInit} from '@angular/core';
-import {ActivatedRoute, Router } from '@angular/router';
-import { User } from 'src/app/models';
+import {ActivatedRoute, Router} from '@angular/router';
+import {User} from 'src/app/models';
 
 
 @Component({
@@ -9,15 +9,19 @@ import { User } from 'src/app/models';
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.css']
 })
-export class UserComponent implements OnInit{
+export class UserComponent implements OnInit {
   @Input()
   user: User
-  constructor(private router:Router, private activatedRoute: ActivatedRoute) {
+
+  constructor(private router: Router, private activatedRoute: ActivatedRoute) {
 
   }
-  ngOnInit(): void {}
-  goToDetails():void {
-    this.router.navigate([this.user.id], {relativeTo:this.activatedRoute, state:this.user})
+
+  ngOnInit(): void {
+  }
+
+  goToDetails(): void {
+    this.router.navigate([this.user.id], {relativeTo: this.activatedRoute, state: this.user})
 
   }
 }
