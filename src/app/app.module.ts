@@ -18,13 +18,25 @@ import {RouterModule, Routes} from '@angular/router';
 import {CommentsResolveService, PostsResolveService, UsersResolveService} from './services';
 
 
-let routes: Routes = [{path: 'users', component: UsersComponent, resolve: {xxx: UsersResolveService},children:[
-  {path: ':id', component: UserDetailsComponent}]
+let routes: Routes = [{
+  path: 'users',
+  component: UsersComponent,
+  resolve: {xxx: UsersResolveService},
+  children: [{path: ':id', component: UserDetailsComponent}]
 },
-  {path: 'posts', component: PostsComponent, resolve: {xxx: PostsResolveService}},
-  {path: 'posts/:id', component: PostDetailsComponent},
-  {path: 'comments', component: CommentsComponent, resolve: {xxx: CommentsResolveService}},
-  {path: 'comments/:id', component: CommentsComponent}]
+  {
+    path: 'posts',
+    component: PostsComponent,
+    resolve: {xxx: PostsResolveService},
+    children: [{path: ':id', component: PostDetailsComponent}]
+  },
+  {
+    path: 'comments',
+    component: CommentsComponent,
+    resolve: {xxx: CommentsResolveService},
+    children: [{path: ':id', component: CommentDetailsComponent}]
+  },
+]
 
 @NgModule({
   declarations: [

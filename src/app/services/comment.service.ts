@@ -10,7 +10,6 @@ export class CommentService {
   private url = 'https://jsonplaceholder.typicode.com/comments'
 
   constructor(private httpClient: HttpClient) {
-
   }
 
   getComment(): Observable<Comment[]> {

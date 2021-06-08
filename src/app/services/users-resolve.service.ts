@@ -8,7 +8,7 @@ import {User} from '../models';
   providedIn: 'root'
 })
 export class UsersResolveService implements Resolve<User[]> {
-  private url = 'https://jsonplaceholder.typicode.com/users'
+  private url = 'https://jsonplaceholder.typicode.com/users';
 
   constructor(private httpClient: HttpClient) {
   }

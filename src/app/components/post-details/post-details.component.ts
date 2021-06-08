@@ -1,8 +1,6 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import { Post } from 'src/app/models';
-
-
+import {Post} from 'src/app/models';
 
 @Component({
   selector: 'app-post-details',
@@ -10,7 +8,7 @@ import { Post } from 'src/app/models';
   styleUrls: ['./post-details.component.css']
 })
 
-export class PostDetailsComponent implements OnInit {
+export class PostDetailsComponent {
   details: Post
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute) {
@@ -18,13 +16,5 @@ export class PostDetailsComponent implements OnInit {
         this.details = this.router.getCurrentNavigation()?.extras.state as Post;
       }
     )
-
   }
-
-  ngOnInit(): void {
-
-
-  }
-
-
 }

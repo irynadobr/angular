@@ -1,22 +1,17 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Post} from 'src/app/models';
-import {PostService} from 'src/app/services';
 
 @Component({
   selector: 'app-post',
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.css']
 })
-export class PostComponent implements OnInit {
+export class PostComponent {
   @Input()
-  post: Post
+  post: Post;
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute) {
-
-  }
-
-  ngOnInit(): void {
   }
 
   goToDetails(): void {
