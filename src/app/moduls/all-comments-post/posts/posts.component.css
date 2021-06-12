@@ -1,0 +1,9 @@
+.wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.posts, .allCommentsPost {
+  width: 50%;
+}
+

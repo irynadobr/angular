@@ -15,6 +15,9 @@ export class PostService {
   getPosts(): Observable<Post[]> {
     return this.httpClient.get<Post[]>(this.url);
   }
+  getPostsUser(id:number):Observable<Post[]>{
+    return this.httpClient.get<Post[]>(this.url+'?'+`userId=${id}`)
+  }
 }
 
 
