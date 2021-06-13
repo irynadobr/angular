@@ -1,0 +1,9 @@
+<div *ngFor="let user of users">
+  <app-user [user]="user">
+<!--            *ngIf="!!!(user.id%2)"-->
+  </app-user>
+</div>
+<hr>
+<router-outlet></router-outlet>
+<hr>
+

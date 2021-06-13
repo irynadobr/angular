@@ -15,12 +15,5 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  getUsers(): void {
-    this.router.navigate(['allPostsUser'])
 
-  }
-
-  getPosts(): void {
-    this.router.navigate(['allCommentsPost'])
-  }
 }
